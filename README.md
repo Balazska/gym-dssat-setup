@@ -34,3 +34,19 @@ export BASH_ENV=/etc/profile
 
 bash -c "python /opt/gym_dssat_pdi/samples/run_env.py"
 ```
+
+# if you want to build a docker image
+## Build
+```
+docker build -t dssat:v1 .
+```
+## Start
+```
+docker run -it --name dssat dssat:v1
+```
+
+If you start the container it will execute the run.py file, which creates a DSSAT env, and starts it.
+In every iteration it displays the current state, and wait for you to execute an action in a prompt.
+
+The action should be given in the following form: X,Y
+where X and Y are numbers, eg. 10,10
